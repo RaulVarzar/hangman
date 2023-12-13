@@ -38,8 +38,8 @@ export default function Keyboard({ checkLetter, guessedLetters, wrongLetters }) 
     }
 
     return (
-        <div className="flex flex-col items-center my-1 mt-12 scale-125 text-stone-600">
-            <div className="flex justify-center gap-1 my-1 uppercase">
+        <div className="flex flex-col items-center mx-auto my-1 mt-12 scale-90 -translate-x-2 sm:translate-x-0 md:scale-105 lg:scale-125 text-stone-600">
+            <div className="flex justify-center gap-0 my-0 uppercase md:gap-1 md:my-1">
                 {letters[0].map((i, index) => {
                     return (
                         <kbd 

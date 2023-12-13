@@ -91,9 +91,12 @@ export  function FadeOut({ children, duration, delay }){
     )
 }
 
-export  function ShrinkOut({ children, duration, delay }){
+export  function ShrinkIn({ children, duration, delay }){
     return(
         <motion.div 
+            initial={{scaleY:0}}
+            animate={{scaleY:1}}
+            transition={{duration:0.5, delay:0.1}}
             exit={{ 
                 opacity: 0,
                 scale:0, 

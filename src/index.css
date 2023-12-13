@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, html {
+    font-family: 'Roboto Mono', cursive;
+  }
+
+.modal{
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.figure-container {
+  fill: transparent;
+  @apply stroke-stone-700;
+  opacity: 30%;
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+
