@@ -7,7 +7,7 @@ function Modal({ status, onClose, word }) {
     const handleOpen = () => { // timeout before opening modal
         const timer =  setTimeout(() => {
             dialog.current.showModal()
-        }, 500)
+        }, 800)
         return () => clearTimeout(timer);
     }
 
@@ -37,7 +37,7 @@ function Modal({ status, onClose, word }) {
             {/* <p className="py-4 opacity-40">Press ESC key or click the button below to close</p> */}
             <div className="justify-center my-0 modal-action">
                 <form method="dialog">
-                    <button className="btn btn-secondary btn-outline">NEW GAME</button>
+                    <button className="rounded-xl btn btn-secondary btn-outline">NEW GAME</button>
                 </form>
             </div>
         </div>

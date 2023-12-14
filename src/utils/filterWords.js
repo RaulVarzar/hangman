@@ -13,13 +13,18 @@ function hasDuplicates(arr, value) { // check how many times value appears in th
 function isValidWord(word){
     if (word.length < 5){  // remove words that are too short
         return(false)
-    } else if (word[0]===word[word.length-1] && hasDuplicates(word, word[0]) > 0){  // remove word if first letter is the same as last letter and first letter has another duplicate
+    } 
+    if (word.length < 7 && (hasDuplicates(word, word[0]) > 0 || hasDuplicates(word, word[word.length-1]) > 0)){
+      return false
+    }
+    else if (word[0]===word[word.length-1] && hasDuplicates(word, word[0]) > 0){  // remove word if first letter is the same as last letter and first letter has another duplicate
         return(false)
     } else if (hasDuplicates(word, word[0]) > 1 || hasDuplicates(word, word[word.length-1]) > 1) {  // remove word if first or last letter has more than 1 duplicate
         return(false)
     }
     return true
 }
+
 
 const onlyValidWords = words.filter(word => isValidWord(word) === true)
 

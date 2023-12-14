@@ -66,8 +66,8 @@ export  function MoveInOut({ children, duration, delay }){
 export  function FromTop({ children, duration, delay }){
     return(
         <motion.div
-            initial={{ translateY:-100 }}
-            animate={{  translateY:0 }}
+            initial={{ y: '-100%', opacity:0, scaleY:0 }}
+            animate={{  y:0, opacity:1, scaleY:1 }}
             transition={{ duration: duration, delay:delay }}
         >
             {children}

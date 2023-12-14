@@ -23,7 +23,7 @@ export default function Keyboard({ checkLetter, guessedLetters, wrongLetters }) 
     }
 
     function setClasses(i){
-        const classes = ["transition duration-[200ms] cursor-pointer hover:scale-125 hover:bg-opacity-100 kbd mx-0.5 "]
+        const classes = ["transition duration-[200ms] cursor-pointer rounded-lg hover:scale-125 hover:bg-opacity-100 kbd mx-0.5 "]
         if (selectedLetter===i) {
             classes.push(" bg-secondary")
         } else if (guessedLetters.includes(i)){
@@ -75,7 +75,7 @@ export default function Keyboard({ checkLetter, guessedLetters, wrongLetters }) 
                 )}
             </div>
             <button
-                className={"mx-auto mt-4 uppercase px-4 transition duration-300 rounded-lg btn btn-secondary hover:scale-105 shadow-md text-stone-100 tracking-wider btn-sm " + (!selectedLetter && " btn-disabled opacity-60")}
+                className={"mx-auto mt-4 uppercase px-4 transition duration-300 rounded-lg btn btn-secondary hover:scale-103 shadow-md text-stone-100 tracking-wider btn-sm " + (!selectedLetter && " btn-disabled opacity-40")}
                 type="button"
                 onClick={() => submitLetter(selectedLetter)}
             >

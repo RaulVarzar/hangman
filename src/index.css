@@ -19,3 +19,23 @@ body, html {
   stroke-linecap: round;
 }
 
+[data-theme="dark"] .figure-container {
+  @apply stroke-stone-300;
+  opacity: 40%;
+}
+
+[data-theme="coffee"] .figure-container {
+  @apply stroke-stone-200;
+}
+
+[data-theme="dark"] span{
+  @apply text-stone-200
+}
+
+[data-theme="dark"] p {
+  @apply text-stone-300
+}
+
+.tooltip:before{
+  color:white
+}

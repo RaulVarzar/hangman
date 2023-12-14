@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { filterByDifficulty } from "./utils/filterWords.js";
 
 import StartGame from "./components/StartGame.jsx";
@@ -11,9 +11,11 @@ import { FadeIn, FadeInOut} from "./components/Animations.jsx"
 
 
 function App() {
-  console.log("APP RERENDERED")
   const [word, setWord] = useState('')
   const [difficulty, setDifficulty] = useState('')
+  // const [isdark, setIsdark] = useState(
+  //   JSON.parse(localStorage.getItem('isdark'))
+  // );
   
   function handleStartGame(difficulty){
     const filteredWords = filterByDifficulty(difficulty)
@@ -26,40 +28,39 @@ function App() {
     setWord('')
   }
 
-
   return (
     <Layout>
+
           {!word && 
-              <FadeInOut delay={0} duration={0.3}>
+              // <FadeInOut delay={0.3} duration={0.6}>
                   <Header/>
-               </FadeInOut>
+              // </FadeInOut>
            }
       
           <motion.div 
             layout 
-            className="pb-4 mx-auto text-center w-12/12 sm:shadow-md rounded-xl sm:bg-base-200 md:my-8 md:mb-8"
+            className="pb-4 mx-auto overflow-hidden h-fit sm:shadow-md rounded-xl sm:bg-base-200 md:my-8 md:mb-8"
             >
                   {!word ?
-                    <AnimatePresence mode="wait">
                         <motion.div
-                        key={word}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0, x:100}}
-                          transition={{ delay: 0.3, duration:0.3 }}
+                          key={word}
+                          initial={{ opacity: 0, y:'-100%' }}
+                          animate={{ opacity: 1, y:0 }}
+                          exit={{ opacity: 0, y:'-100%'}}
+                          transition={{ delay: 0, duration:0.3 }}
                         >
                             <StartGame onStartGame={handleStartGame}/>
                         </motion.div>
-                    </AnimatePresence>
-                        :   
-                        <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0, x:100}}
-                        transition={{ delay: 0.2, duration:1 }}
-                      >
-                        <Game difficulty={difficulty} word={word} restartGame={handleRestartGame}/>
-                    </motion.div>
+                        :  
+                          <motion.div
+                          key={word}
+                          initial={{ opacity: 0, y:'100%'}}
+                          animate={{ opacity: 1, y:0}}
+                          exit={{ opacity: 0, y:"100%"}}
+                          transition={{ delay: 0, duration:0.3 }}
+                        >
+                          <Game difficulty={difficulty} word={word} restartGame={handleRestartGame}/>
+                      </motion.div>
                       }
             </motion.div> 
       </Layout>

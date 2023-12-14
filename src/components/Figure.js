@@ -1,7 +1,7 @@
 import {motion} from 'framer-motion'
 
 const Figure = ({ wrongLetters }) => {
-  const errors = wrongLetters
+  const errors = wrongLetters.length
 
   return (
     <svg height="240" width="280" className="ml-16 sm:scale-125 figure-container">
@@ -13,9 +13,9 @@ const Figure = ({ wrongLetters }) => {
       {/* <!-- Rope --> */}
       {errors > 0 &&
           <motion.line 
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{duration:0.6, delay:0.2}}
+            initial={{pathLength:0}}
+            animate={{pathLength:1}}
+            transition={{duration:0.4, delay:0.2}}
             x1="140" y1="30" x2="140" y2="50" 
           />
       }
@@ -23,8 +23,9 @@ const Figure = ({ wrongLetters }) => {
       {/* <!-- Head --> */}
       {errors > 1 &&
         <motion.circle
-          initial={{opacity:0}}
-          animate={{opacity:1}}
+          initial={{pathLength:0, rotate:-90}}
+          animate={{pathLength:1}}
+          transition={{duration:0.4, delay:0.2}}
           cx="140" cy="70" r="20" 
         />
       }
@@ -32,9 +33,9 @@ const Figure = ({ wrongLetters }) => {
       {/* <!-- Body --> */}
       {errors > 2 &&
         <motion.line 
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-          transition={{duration:0.6, delay:0.2}} 
+        initial={{pathLength:0}}
+        animate={{pathLength:1}}
+          transition={{duration:0.4, delay:0.2}} 
           x1="140" y1="90" x2="140" y2="150" 
         />
       }
@@ -42,18 +43,18 @@ const Figure = ({ wrongLetters }) => {
       {/* <!-- Arms --> */}
       {errors > 3 &&
         <motion.line 
-          initial={{opacity:0}}
-          animate={{opacity:1}}
-          transition={{duration:0.6, delay:0.2}}  
+          initial={{pathLength:0}}
+          animate={{pathLength:1}}
+          transition={{duration:0.4, delay:0.2}}  
           x1="140" y1="120" x2="120" y2="100" 
         />
       }
 
       {errors > 4 &&
         <motion.line 
-          initial={{opacity:0}}
-          animate={{opacity:1}}
-          transition={{duration:0.6, delay:0.2}}
+          initial={{pathLength:0}}
+          animate={{pathLength:1}}
+          transition={{duration:0.4, delay:0.2}}
           x1="140" y1="120" x2="160" y2="100" 
         />
       }
@@ -61,17 +62,17 @@ const Figure = ({ wrongLetters }) => {
       {/* <!-- Legs --> */}
       {errors > 5 &&
         <motion.line 
-          initial={{opacity:0}}
-          animate={{opacity:1}}
-          transition={{duration:0.6, delay:0.2}} 
+          initial={{pathLength:0}}
+          animate={{pathLength:1}}
+          transition={{duration:0.4, delay:0.2}} 
           x1="140" y1="150" x2="120" y2="180" 
         />
       }
       {errors > 6 &&
         <motion.line 
-          initial={{opacity:0}}
-          animate={{opacity:1}}
-          transition={{duration:0.6, delay:0.2}}
+          initial={{pathLength:0}}
+          animate={{pathLength:1}}
+          transition={{duration:0.4, delay:0.2}}
           x1="140" y1="150" x2="160" y2="180"
          />
       }
@@ -80,14 +81,14 @@ const Figure = ({ wrongLetters }) => {
       {errors > 7 &&
         <>
           <motion.line
-            initial={{opacity:0}}
-            animate={{opacity:1}} 
+            initial={{pathLength:0}}
+            animate={{pathLength:1}} 
             transition={{duration:0.2, delay:0}}
             x1="133" y1="77" x2="147" y2="65" 
           />
            <motion.line
-              initial={{opacity:0}}
-              animate={{opacity:1}} 
+              initial={{pathLength:0}}
+              animate={{pathLength:1}} 
               transition={{duration:0.2, delay:0}}
               y1="65" x1="133" y2="77" x2="147" 
             />
