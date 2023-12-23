@@ -21,7 +21,9 @@ function isValidWord(word){
         return(false)
     } else if (hasDuplicates(word, word[0]) > 1 || hasDuplicates(word, word[word.length-1]) > 1) {  // remove word if first or last letter has more than 1 duplicate
         return(false)
-    }
+    } else if (hasDuplicates(word, word[0]) >= 1 && hasDuplicates(word, word[word.length-1]) >= 1) {  // remove word if first or last letter has more than 1 duplicate
+      return(false)
+  }
     return true
 }
 

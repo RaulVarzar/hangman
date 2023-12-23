@@ -30,13 +30,11 @@ function App() {
 
   return (
     <Layout>
-
           {!word && 
-              // <FadeInOut delay={0.3} duration={0.6}>
+              <FadeInOut key={word} delay={0.4} duration={0.5}>
                   <Header/>
-              // </FadeInOut>
+              </FadeInOut>
            }
-      
           <motion.div 
             layout 
             className="pb-4 mx-auto overflow-hidden h-fit sm:shadow-md rounded-xl sm:bg-base-200 md:my-8 md:mb-8"

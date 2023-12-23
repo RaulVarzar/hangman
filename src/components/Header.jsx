@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 
 export default function Header() {
   
-  const tabs = ['tomato', 'lettuce', 'cheese'];
-  const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [theme, setTheme] = useState(
     JSON.parse(localStorage.getItem('storedTheme'))
   );
@@ -33,7 +31,7 @@ export default function Header() {
               <div className="mb-12 dropdown">
                 <div tabIndex={0} role="button" className="m-1 rounded-2xl btn-sm btn">
                   THEME
-                  <i class="fa-solid fa-chevron-down"></i>               
+                  <i className="fa-solid fa-chevron-down"></i>               
                 </div>
                 <ul tabIndex={0} className="dropdown-content z-[1] p-3 shadow-2xl rounded-xl bg-base-100  -ml-0.5 w-fit">
                   <li><input type="radio" name="theme-dropdown" className="text-center rounded-lg theme-controller btn btn-sm btn-block btn-ghost" onChange={() => setTheme('retro')} aria-label="Default" checked={theme==="retro"}/></li>
