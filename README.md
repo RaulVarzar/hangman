@@ -5,3 +5,10 @@
 ### This is a simple Hangman game made in React using TailwindCSS, DaisyUI and Framer Motion
 
 The user can play the game on 3 difficulty levels that determine the length of the word. The words are selected randomly from a provided list.
+
+###  <h2>🚀 BUILT WITH</h2>
+
+
+*   React
+*   TailwindCSS
+*   DaisyUI
